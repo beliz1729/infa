@@ -4,8 +4,8 @@
     $link = mysqli_connect($host, $user, $password, $database) 
     or die ("Ошибка подключения к базе данных" . mysqli_error());
 
-    $name = $_GET['name'];
-    $fio = $_GET['fio'];
+    $name = strtr($_GET['name'], '*', '%');
+    $fio = strtr($_GET['fio'], '*', '%');
 
     echo "<form method='GET' action='search.php'>
     <p>Введите что-нибудь абитуриента: <input type='text' name='name' value='$name'></p>
@@ -19,8 +19,6 @@
     FROM workers, registration
     WHERE workers.id_worker=registration.id_worker 
     AND fio_abit LIKE '%$name%' AND fio LIKE '%$fio%'";
-
-
 
 $result = mysqli_query($link, $sql);
 echo "<table border='1'>
