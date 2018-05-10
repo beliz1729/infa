@@ -6,10 +6,12 @@
 
     $name = strtr($_GET['name'], '*', '%');
     $fio = strtr($_GET['fio'], '*', '%');
+    $name1 = strtr($_GET['name'], '*', '*');
+    $fio1 = strtr($_GET['fio'], '*', '*');
 
     echo "<form method='GET' action='search.php'>
-    <p>Введите что-нибудь абитуриента: <input type='text' name='name' value='$name'></p>
-    <p>Введите что-нибудь работника: <input type='text' name='fio' value='$fio'></p>
+    <p>Введите что-нибудь абитуриента: <input type='text' name='name' value='$name1'></p>
+    <p>Введите что-нибудь работника: <input type='text' name='fio' value='$fio1'></p>
     <p><input type='submit' name='enter' value='Поиск'></p>
     </form>";
 
