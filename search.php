@@ -36,7 +36,13 @@ echo "<td>" . $row['fio_abit'] . "</td>";
 echo "</tr>";
 }
 
-echo "</table>"; 
+echo "</table>";
+     
+       if(mysqli_num_rows($result) == 0)
+{
+     echo 'Ошибка';
+}
+
 
 }
 
