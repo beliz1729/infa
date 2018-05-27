@@ -6,6 +6,7 @@
 
     $name = strtr($_GET['name'], '*', '%');
     $fio = strtr($_GET['fio'], '*', '%');
+
     $name1 = strtr($_GET['name'], '*', '*');
     $fio1 = strtr($_GET['fio'], '*', '*');
 
@@ -36,15 +37,16 @@ echo "<td>" . $row['fio_abit'] . "</td>";
 echo "</tr>";
 }
 
-echo "</table>";
-     
-       if(mysqli_num_rows($result) == 0)
+echo "</table>"; 
+
+if(mysqli_num_rows($result) == 0)
 {
      echo 'Ошибка';
 }
 
-
 }
+
+
 
 
 mysqli_close($link);
