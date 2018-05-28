@@ -29,7 +29,9 @@ if (isset($_GET['enter'])) {
     $result= mysqli_query($link, $update);
 }
 
-echo "<p><a href='list.php?'>back to list.php</a></p>"
+if (isset($_GET['enter'])) {
+    header('location: ./list.php');
+}
  
 
 ?>
