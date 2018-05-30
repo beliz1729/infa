@@ -23,6 +23,7 @@ echo "<table border='1'>
 <th>school</th>
 <th>id_abit</th>
 <th>edition</th>
+<th>delete</th>
 </tr>";
 
 while($row = mysqli_fetch_array($result))
@@ -35,6 +36,7 @@ echo "<td>" . $fio . "</td>";
 echo "<td>" . $school . "</td>";
 echo "<td>" . $id . "</td>";
 echo "<td><a href='edit.php?fio=$fio&school=$school&id=$id'>edit</a><br></td>";
+echo "<td><a href = './delete.php?id=$id'>delete</a></td>";
 echo "</tr>";
 }
 
